@@ -1,4 +1,4 @@
-// Helper function to extract number of days from payment period// src/App.js
+// src/App.js
 import React, { useState, useRef, useEffect } from "react";
 import { CandleChart } from "./CandleChart";
 import "./App.css";
@@ -20,16 +20,6 @@ const PayLaterWorkflow = ({ currentPrice }) => {
   const getTransferCurrency = () => {
     const [baseCurrency, quoteCurrency] = formData.tradingPair.split('/');
     return formData.direction === 'Sell' ? baseCurrency : quoteCurrency;
-  };
-
-  // Helper function to get the base currency from trading pair (for calculations)
-  const getBaseCurrency = () => {
-    return formData.tradingPair.split('/')[0];
-  };
-
-  // Helper function to get the quote currency from trading pair
-  const getQuoteCurrency = () => {
-    return formData.tradingPair.split('/')[1];
   };
 
   const getDaysFromPeriod = (period) => {
@@ -64,7 +54,7 @@ const PayLaterWorkflow = ({ currentPrice }) => {
     };
   };
 
-  const { totalPayment, depositAmount, transactionFee, totalPaymentFormatted, depositAmountFormatted, transactionFeeFormatted } = calculateValues();
+  const { totalPaymentFormatted, depositAmountFormatted, transactionFeeFormatted } = calculateValues();
   const walletAddress = "daDR23762309fDGhfjalf68dd983753FD2";
   // Use the current price from the chart, with fallback
   const livePrice = currentPrice || 2856.42;
