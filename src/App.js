@@ -917,7 +917,7 @@ function App() {
           justifyContent: "center",
         }}
       >
-        Coinbase
+        MiDA Exchange
 
         {/* Right-side controls container */}
         <div
